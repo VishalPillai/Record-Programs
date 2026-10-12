@@ -1,0 +1,18 @@
+a)SELECT E.Name, D.D_Name 
+FROM Employee E, Department D 
+WHERE E.DEPT = D.D_ID;
+b)SELECT DEPT, Gender, COUNT(*) 
+FROM Employee 
+GROUP BY DEPT, Gender; 
+c)SELECT COUNT(*) 
+FROM Employee 
+WHERE Experience > 15 
+AND SALARY > 100000; 
+d)SELECT E.Name, 
+E.SALARY * D.INCENTIVE / 100 AS Incentive 
+FROM Employee E, Department D 
+WHERE E.DEPT = D.D_ID;
+e)SELECT E.Name, 
+E.SALARY + (E.SALARY * D.INCENTIVE / 100) AS Total_Salary 
+FROM Employee E, Department D 
+WHERE E.DEPT = D.D_ID; 

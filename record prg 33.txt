@@ -1,0 +1,34 @@
+a)UPDATE EMP 
+SET sal = sal + 100; 
+b)START TRANSACTION; 
+UPDATE EMP 
+SET sal = GREATEST(sal - 100, 500) 
+WHERE sal >  
+(SELECT avgsal 
+FROM (SELECT AVG(sal) AS avgsal FROM EMP) A); 
+COMMIT;
+c)SELECT D.deptno, D.dname, COUNT(E.empno), SUM(E.sal), AVG(E.sal) 
+FROM EMP E, Dept D 
+WHERE E.deptno = D.deptno 
+GROUP BY D.deptno, D.dname;
+d)SELECT E.empno, E.empname, E.deptno, D.dname 
+FROM EMP E, Dept D 
+WHERE E.deptno = D.deptno; 
+e)SELECT job, COUNT(empno), SUM(sal), AVG(sal) 
+FROM EMP 
+GROUP BY job; 
+f)SELECT job, COUNT(empno), SUM(sal), AVG(sal) 
+FROM EMP 
+GROUP BY job 
+HAVING COUNT(empno) < 2;
+g)SELECT empname, hiredate 
+FROM EMP 
+WHERE hiredate = (SELECT MIN(hiredate) FROM EMP); 
+h)SELECT MIN(sal), MAX(hiredate) 
+FROM EMP;
+i)SELECT AVG(comm) 
+FROM EMP;
+j)SELECT DISTINCT job 
+FROM EMP;
+k)SELECT COUNT(DISTINCT job) 
+FROM EMP; 

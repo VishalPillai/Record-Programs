@@ -1,0 +1,30 @@
+a)UPDATE Student 
+SET id='s107' 
+WHERE id='101'; 
+b)ALTER TABLE Student 
+ADD Tot INT; 
+c)UPDATE Student 
+SET Tot=ENG+PHY+CHE+MATHS+CS; 
+d)ALTER TABLE Student 
+ADD Average DECIMAL(5,2), 
+ADD Grade VARCHAR(2); 
+e)UPDATE Student 
+SET Average=Tot/5; 
+UPDATE Student 
+SET Grade='A+' 
+WHERE Average>91;
+f)DELETE FROM Student 
+WHERE Tot IS NULL;
+g)SELECT * 
+FROM Student 
+WHERE Average>80; 
+h)SELECT MIN(CS), MAX(CS), SUM(CS), AVG(CS) 
+FROM Student; 
+i)SELECT id, name, ENG, PHY, CHE, MATHS, CS 
+FROM Student 
+ORDER BY Average DESC; 
+j)INSERT INTO Student(id,name,ENG,PHY,CHE,MATHS,CS) 
+VALUES('s104','Catherine',95,76,NULL,74,63); 
+k)UPDATE Student 
+SET CHE=80, Grade='A' 
+WHERE id='s104';

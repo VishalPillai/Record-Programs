@@ -1,0 +1,15 @@
+a)SELECT FLNO, NoFlights 
+FROM Flights 
+WHERE `Start`='Kanpur' AND `End`='Bangalore';
+b)SELECT * 
+FROM Flights 
+ORDER BY FLNO DESC; 
+c)SELECT F.FLNO, R.Airlines, 
+R.Fare + R.Fare * R.Tax / 100 AS Fare_To_Be_Paid 
+FROM Flights F, Fares R 
+WHERE F.FLNO = R.FLNO 
+AND F.`Start`='Delhi' 
+AND F.`End`='Mumbai';
+d)SELECT MIN(Fare) 
+FROM Fares 
+WHERE Airlines='Indian Airlines';
