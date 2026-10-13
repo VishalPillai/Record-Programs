@@ -12,6 +12,6 @@ def above_75(d):
     for roll in d:
         if d[roll][1] > 75:
             print(d[roll][0])
-            
+
 create_dict()
 above_75(d)

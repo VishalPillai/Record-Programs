@@ -1,17 +1,17 @@
 def CreatePledge():
-    file = open("pledge.txt","w")
-    n = int(input("Enter no of lines"))
+    file = open("pledge.txt", "w")
+    n = int(input("Enter no of lines: "))
     for i in range(n):
-        lines = input("Enter pledge")
-        file.write(lines+
-                   "\n")
+        line = input("Enter pledge: ")
+        file.write(line + "\n")
+    file.close()
 
-    file.close()
 def DisplayPledge():
-    file = open("pledge.txt","r")
-    for i in file:
-        i = i.strip()
-        print(i," - ",len(i)," characters")
+    file = open("pledge.txt", "r")
+    for line in file:
+        line = line.strip()
+        print(line, "-", len(line), "characters")
     file.close()
+
 CreatePledge()
-DisplayPledge() 
+DisplayPledge()

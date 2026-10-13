@@ -15,12 +15,10 @@ def highest_month():
     for name, sales in emp.items():
         highest = 0
         highest_month_name = ""
-        
         for month, amount in sales.items():
             if amount > highest:
                 highest = amount
                 highest_month_name = month
-                
         print(name, "had highest sales in", highest_month_name, "with sales", highest)
         print()
 
